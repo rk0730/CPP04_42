@@ -32,3 +32,9 @@ void Animal::makeSound() const
 {
 	std::cout << "Animal " << _type << " makes sound!" << std::endl;
 }
+
+std::string Animal::getIdea(int index) const
+{
+	(void)index;
+	return "Animal has no brain";
+}

@@ -26,7 +26,7 @@ int main(void)
 
 	// deep copy
 	const Animal *dog = new Dog("dog's special idea");
-	const Animal *copy_dog = new Dog(*(Dog *)dog);
+	Animal *copy_dog = new Dog(*(Dog *)dog);
 	delete dog;
 	std::cout << "copy_dog's idea: " << copy_dog->getIdea(0) << std::endl;
 	delete copy_dog;

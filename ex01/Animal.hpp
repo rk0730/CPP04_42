@@ -13,7 +13,7 @@ public:
 	virtual ~Animal();
 	std::string getType() const;
 	virtual void makeSound() const;
-	virtual std::string getIdea(int index) const = 0;
+	virtual std::string getIdea(int index) const;
 
 protected:
 	std::string _type;
