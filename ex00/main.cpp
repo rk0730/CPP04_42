@@ -1,5 +1,5 @@
-#include "Dog.hpp"
 #include "Cat.hpp"
+#include "Dog.hpp"
 
 int main(void)
 {
@@ -12,7 +12,7 @@ int main(void)
 	i->makeSound();
 	j->makeSound();
 	meta->makeSound();
-	
+
 	const Animal meta_copy(*meta);
 	meta_copy.makeSound();
 	const Animal j_copy(*j);

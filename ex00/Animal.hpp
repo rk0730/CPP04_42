@@ -3,7 +3,8 @@
 
 #include <iostream>
 
-class Animal {
+class Animal
+{
 public:
 	Animal();
 	Animal(const Animal &other);
