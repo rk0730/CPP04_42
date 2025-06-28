@@ -6,6 +6,8 @@ SRCS += $(SRCDIR)/main.cpp
 SRCS += $(SRCDIR)/Animal.cpp
 SRCS += $(SRCDIR)/Dog.cpp
 SRCS += $(SRCDIR)/Cat.cpp
+SRCS += $(SRCDIR)/WrongAnimal.cpp
+SRCS += $(SRCDIR)/WrongCat.cpp
 
 OBJDIR := objs
 OBJS = $(SRCS:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)

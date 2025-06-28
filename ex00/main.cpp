@@ -1,5 +1,6 @@
 #include "Cat.hpp"
 #include "Dog.hpp"
+#include "WrongCat.hpp"
 
 int main(void)
 {
@@ -12,17 +13,14 @@ int main(void)
 	i->makeSound();
 	j->makeSound();
 	meta->makeSound();
-
-	const Animal meta_copy(*meta);
-	meta_copy.makeSound();
-	const Animal j_copy(*j);
-	j_copy.makeSound();
-	Animal i_copy;
-	i_copy = *i;
-	i_copy.makeSound();
-
 	delete meta;
 	delete j;
 	delete i;
 	return 0;
+
+	// WrongCat
+	// const WrongAnimal *wc = new WrongCat();
+	// std::cout << wc->getType() << " " << std::endl;
+	// wc->makeSound();
+	// delete wc;
 }
