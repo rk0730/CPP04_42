@@ -30,6 +30,10 @@ int main(void)
 	delete dog;
 	std::cout << "copy_dog's idea: " << copy_dog->getIdea(0) << std::endl;
 	delete copy_dog;
-
+	
+	// copy assignment operator
+	Cat cat1;
+	Cat cat2;
+	cat2 = cat1;
 	return 0;
 }
