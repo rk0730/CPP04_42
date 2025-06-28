@@ -8,8 +8,8 @@ SRCS += $(SRCDIR)/AMateria.cpp
 SRCS += $(SRCDIR)/Character.cpp
 SRCS += $(SRCDIR)/Cure.cpp
 SRCS += $(SRCDIR)/Ice.cpp
-
 SRCS += $(SRCDIR)/MateriaSource.cpp
+SRCS += $(SRCDIR)/TrashList.cpp
 
 OBJDIR := objs
 OBJS = $(SRCS:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)

@@ -3,6 +3,8 @@
 
 #include "ICharacter.hpp"
 
+class TrashList;
+
 class Character : public ICharacter
 {
 public:
@@ -15,12 +17,11 @@ public:
 	void equip(AMateria *m);
 	void unequip(int idx);
 	void use(int idx, ICharacter &target);
+
 private:
 	std::string _name;
 	AMateria *_inventory[4];
-	static const int _MAX_TRASH = 100;
-	AMateria *_trash[_MAX_TRASH];
-	int _trashIndex;
+	static TrashList _trashList;
 };
 
 #endif

@@ -1,27 +1,25 @@
 #include "Character.hpp"
 #include "AMateria.hpp"
+#include "TrashList.hpp"
 
-Character::Character() : ICharacter(), _name(""), _trashIndex(0)
+TrashList Character::_trashList;
+
+Character::Character() : ICharacter(), _name("")
 {
 	for (int i = 0; i < 4; i++)
 		_inventory[i] = NULL;
-	for (int i = 0; i < _MAX_TRASH; i++)
-		_trash[i] = NULL;
 }
 
-Character::Character(std::string name) : ICharacter(), _name(name), _trashIndex(0)
+Character::Character(std::string name) : ICharacter(), _name(name)
 {
 	for (int i = 0; i < 4; i++)
 		_inventory[i] = NULL;
-	for (int i = 0; i < _MAX_TRASH; i++)
-		_trash[i] = NULL;
 }
 
 Character::Character(const Character &other)
 {
 	*this = other;
 }
-
 Character &Character::operator=(const Character &other)
 {
 	if (this != &other)
@@ -43,11 +41,6 @@ Character::~Character()
 	{
 		if (_inventory[i])
 			delete _inventory[i];
-	}
-	for (int i = 0; i < _trashIndex; i++)
-	{
-		if (_trash[i])
-			delete _trash[i];
 	}
 }
 
@@ -73,17 +66,7 @@ void Character::unequip(int idx)
 {
 	if (idx < 0 || idx >= 4)
 		return;
-	if (_inventory[idx])
-	{
-		if (_trashIndex < _MAX_TRASH)
-			_trash[_trashIndex++] = _inventory[idx];
-		else
-		{
-			delete _trash[_trashIndex % _MAX_TRASH];
-			_trash[_trashIndex % _MAX_TRASH] = _inventory[idx];
-			_trashIndex++;
-		}
-	}
+	_trashList.add(_inventory[idx]);
 	_inventory[idx] = NULL;
 }
 
