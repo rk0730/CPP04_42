@@ -25,6 +25,7 @@ Dog &Dog::operator=(const Dog &other)
 	if (this != &other)
 	{
 		_type = other._type;
+		delete _brain;
 		_brain = new Brain(*other._brain);
 	}
 	std::cout << "Dog " << _type << " is born! with copy assignment operator" << std::endl;
