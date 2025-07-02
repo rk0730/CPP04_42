@@ -13,4 +13,4 @@ public:
 	void makeSound() const;
 };
 
-#endif // !CAT_HPP
+#endif // !WRONGCAT_HPP

@@ -16,11 +16,12 @@ int main(void)
 	delete meta;
 	delete j;
 	delete i;
-	return 0;
 
 	// WrongCat
-	// const WrongAnimal *wc = new WrongCat();
-	// std::cout << wc->getType() << " " << std::endl;
-	// wc->makeSound();
-	// delete wc;
+	const WrongAnimal *wc = new WrongCat();
+	std::cout << wc->getType() << " " << std::endl;
+	wc->makeSound();
+	delete wc;
+	
+	return 0;
 }
